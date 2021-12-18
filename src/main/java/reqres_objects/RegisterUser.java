@@ -6,9 +6,9 @@ import lombok.Data;
 
 @Builder
 @Data
-public class User {
+public class RegisterUser {
     @Expose
-    String name;
+    String email;
     @Expose
-    String job;
+    String password;
 }
