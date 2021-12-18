@@ -35,9 +35,9 @@ public class ReqresGetTest {
                 .extract().body().asString();
         ResourceUserList resourceUserList = new Gson().fromJson(body, ResourceUserList.class);
         String nameUserFromAPI = resourceUserList.getData().get(0).getName();
-        String pantoneValueFromAPI = resourceUserList.getData().get(4).getPantoneValue();
+        String pantoneValueFromAPI = resourceUserList.getData().get(3).getPantoneValue();
         Assert.assertEquals(nameUserFromAPI,  resourceUserList.getData().get(0).getName());
-        Assert.assertEquals(pantoneValueFromAPI, resourceUserList.getData().get(4).getPantoneValue());
+        Assert.assertEquals(pantoneValueFromAPI, resourceUserList.getData().get(3).getPantoneValue());
     }
 
     @Test

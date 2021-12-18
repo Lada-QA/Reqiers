@@ -26,7 +26,6 @@ public class ReqrestPostTests {
                 .statusCode(200)
                 .extract().body().asString();
         Assert.assertEquals(body, "{\"id\":4,\"token\":\"QpwL5tke4Pnpja7X4\"}");
-
     }
 
     @Test
@@ -61,7 +60,6 @@ public class ReqrestPostTests {
                 .statusCode(400)
                 .extract().body().asString();
         Assert.assertEquals(body, "{\"error\":\"Missing password\"}");
-
     }
 
     @Test

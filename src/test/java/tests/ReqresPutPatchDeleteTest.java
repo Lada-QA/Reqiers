@@ -10,7 +10,6 @@ public class ReqresPutPatchDeleteTest {
 
     @Test
     public void postCreateUserTest() {
-        //https://reqres.in/api/users
         User user = User.builder()
                 .name("morpheus")
                 .job("leader")
@@ -75,6 +74,5 @@ public class ReqresPutPatchDeleteTest {
         String jobUserFromAPI = user.getJob();
         Assert.assertEquals(nameUserFromAPI,  user.getName());
         Assert.assertEquals(jobUserFromAPI, user.getJob());
-
     }
 }
