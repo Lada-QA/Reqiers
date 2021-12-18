@@ -27,6 +27,7 @@ public class ReqresPutPatchDeleteTest {
     @Test
     public void deleteUserTest() {
         given()
+                .log().all()
                 .when()
                 .delete("https://reqres.in/api/users/2")
                 .then()
@@ -51,8 +52,8 @@ public class ReqresPutPatchDeleteTest {
                 .extract().body().asString();
         String nameUserFromAPI = user.getName();
         String jobUserFromApi = user.getJob();
-        Assert.assertEquals(nameUserFromAPI, "Neo");
-        Assert.assertEquals(jobUserFromApi, "zion resident");
+        Assert.assertEquals(nameUserFromAPI, user.getName());
+        Assert.assertEquals(jobUserFromApi, user.getJob());
     }
 
     @Test
@@ -72,8 +73,8 @@ public class ReqresPutPatchDeleteTest {
                 .extract().body().asString();
         String nameUserFromAPI = user.getName();
         String jobUserFromAPI = user.getJob();
-        Assert.assertEquals(nameUserFromAPI, "Ginger");
-        Assert.assertEquals(jobUserFromAPI, "QA");
+        Assert.assertEquals(nameUserFromAPI,  user.getName());
+        Assert.assertEquals(jobUserFromAPI, user.getJob());
 
     }
 }

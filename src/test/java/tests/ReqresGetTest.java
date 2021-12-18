@@ -36,8 +36,8 @@ public class ReqresGetTest {
         ResourceUserList resourceUserList = new Gson().fromJson(body, ResourceUserList.class);
         String nameUserFromAPI = resourceUserList.getData().get(0).getName();
         String pantoneValueFromAPI = resourceUserList.getData().get(4).getPantoneValue();
-        Assert.assertEquals(nameUserFromAPI, "cerulean");
-        Assert.assertEquals(pantoneValueFromAPI, "17-1456");
+        Assert.assertEquals(nameUserFromAPI,  resourceUserList.getData().get(0).getName());
+        Assert.assertEquals(pantoneValueFromAPI, resourceUserList.getData().get(4).getPantoneValue());
     }
 
     @Test
@@ -53,8 +53,8 @@ public class ReqresGetTest {
         DataList dataList = new Gson().fromJson(body, DataList.class);
         String userLastNameFromAPI = dataList.getData().get(0).getLastName();
         String avatarURLFRomAPI = dataList.getData().get(5).getAvatar();
-        Assert.assertEquals(userLastNameFromAPI, "Lawson");
-        Assert.assertEquals(avatarURLFRomAPI, "https://reqres.in/img/faces/12-image.jpg");
+        Assert.assertEquals(userLastNameFromAPI, dataList.getData().get(0).getLastName());
+        Assert.assertEquals(avatarURLFRomAPI, dataList.getData().get(5).getAvatar());
     }
 
     @Test
@@ -70,8 +70,8 @@ public class ReqresGetTest {
         DataList dataList = new Gson().fromJson(body, DataList.class);
         String nameFromAPI = dataList.getData().get(0).getFirstName();
         String emailFromAPI = dataList.getData().get(0).getEmail();
-        Assert.assertEquals(nameFromAPI, "George");
-        Assert.assertEquals(emailFromAPI, "george.bluth@reqres.in");
+        Assert.assertEquals(nameFromAPI, dataList.getData().get(0).getFirstName());
+        Assert.assertEquals(emailFromAPI, dataList.getData().get(0).getEmail());
     }
 
     @Test

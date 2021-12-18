@@ -17,7 +17,7 @@ public class OnlainerTest {
                 .then()
                 .log().all()
                 .statusCode(200)
-                .body("amount", equalTo("3,4512"));
+                .body("amount", equalTo("3,4255"));
     }
 
     @Test
